@@ -4,3 +4,5 @@ memo_venv/
 # python cache
 *.pyc
 __pycache__/
+
+db.sqlite3
