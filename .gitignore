@@ -1,0 +1,6 @@
+# venv
+memo_venv/
+
+# python cache
+*.pyc
+__pycache__/
