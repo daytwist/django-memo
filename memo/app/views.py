@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
+
+from .forms import MemoForm
 from .models import Memo
-from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -14,4 +15,11 @@ def detail(request, memo_id):
 
 
 def new_memo(request):
-    return render(request, "app/new_memo.html")
+    if request.method == "POST":
+        form = MemoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("app:index")
+    else:
+        form = MemoForm
+        return render(request, "app/new_memo.html", {"form": form})
