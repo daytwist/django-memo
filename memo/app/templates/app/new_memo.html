@@ -1,3 +1,4 @@
+{% extends 'app/base.html' %} {% block content %}
 <div>
   <a href="{% url 'app:index' %}"> ホームに戻る</a>
 </div>
@@ -16,3 +17,4 @@
   </table>
   <button type="submit" class="btn">保存</button>
 </form>
+{% endblock %}
